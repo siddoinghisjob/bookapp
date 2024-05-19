@@ -65,7 +65,7 @@ export default function Header() {
         <Link to="/dashboard">
           <h1 className="text-3xl font-bold text-center">BookBuff</h1>
         </Link>
-        <div className="md:block hidden">
+        <div className="md:block hidden w-full">
           <Search />
         </div>
         <button
@@ -78,7 +78,7 @@ export default function Header() {
         </button>
         {message}
       </div>
-      <div className="md:hidden block">
+      <div className="md:hidden block w-full">
         <Search/>
       </div>
     </header>
