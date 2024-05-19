@@ -1,4 +1,4 @@
-const loginChecker = require('../model/login');
+const loginChecker = require("../model/login");
 const jwt = require("jsonwebtoken");
 
 module.exports = async (req, res) => {
@@ -7,21 +7,23 @@ module.exports = async (req, res) => {
   if (utility.success) {
     jwt.sign(
       JSON.stringify({
-        key: utility.id
+        key: utility.id,
       }),
       process.env.secret,
       (err, token) => {
-        if (err)
-          {return res
+        if (err) {
+          return res
             .status(500)
             .json({ success: false, msg: ["Email or password is wrong."] });
-          }
+        }
 
         if (token)
           return res
             .cookie("token", token, {
               httpOnly: true,
               expires: 0,
+              sameSite: "None",
+              secure: true,
             })
             .json({ success: true, msg: ["Success!"] });
 
