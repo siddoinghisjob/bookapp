@@ -101,17 +101,27 @@ function Login() {
               className="border border-gray-400 rounded-lg px-4 py-2 mb-4 w-64"
             />
           </section>
-          <button
-            type={"submit"}
-            className={`bg-black  text-white py-2 px-6 rounded-lg hover:bg-gray-90 ${
-              loader ? "cursor-wait" : "cursor-pointer"
-            }`}
-          >
-            Login
-          </button>
+          <div className="w-full">
+            {!loader && (
+              <button
+                type={"submit"}
+                className={`bg-black w-full  text-white py-2 px-6 rounded-lg hover:bg-gray-90 `}
+              >
+                Login
+              </button>
+            )}
+            {loader && (
+              <p className="w-full flex justify-center">
+                <img className="h-10 w-10" src="/loading-gif.gif" />
+              </p>
+            )}
+          </div>
           {message}
           <p className="w-full text-center">
-            Don&apos;t have a account? <a href="/register" className="underline decoration-dotted">Register</a>
+            Don&apos;t have a account?{" "}
+            <a href="/register" className="underline decoration-dotted">
+              Register
+            </a>
           </p>
         </form>
       </main>
