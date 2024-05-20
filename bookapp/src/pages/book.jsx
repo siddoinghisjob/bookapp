@@ -71,7 +71,7 @@ export default function Book() {
       .finally(() => setReviewLoader(false));
   };
 
-  useEffect(call, []);
+  useEffect(call, [id]);
   return (
     <div
       className={`relative p-5 overflow-x-hidden h-full w-full flex flex-1 flex-col gap-5 bg-gray-100`}

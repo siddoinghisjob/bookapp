@@ -37,7 +37,7 @@ export default function Search() {
           setSearch(e.target.value);
         }}
       />
-      {search.length > 0 && (
+      {search?.length > 0 && (
         <div className="absolute shadow-md z-[999] flex justify-start flex-col items-center bg-white top-12 rounded-2xl p-5 text-black md:w-2/3 w-full max-h-96 overflow-auto">
           {sLoader && <div>Loading....</div>}
           {!sLoader &&
@@ -55,7 +55,7 @@ export default function Search() {
                     />
                     <h1>
                       {it.title ? it.title : "No Title"} |{" "}
-                      {it.author_name.length > 0 ? it.author_name[0] : ""}
+                      {it.author_name?.length > 0 ? it.author_name[0] : ""}
                     </h1>
                   </span>
                 </Link>
