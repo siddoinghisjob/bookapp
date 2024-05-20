@@ -13,9 +13,8 @@ const { add } = require("./controller/review");
 router.post('/login',login);
 router.post('/register', register);
 
-router.post("/logout", logout);
-
 router.use(auth)
+router.post("/logout", logout);
 router.get("/images/:page", images);
 router.post("/auth", auth_controller);
 router.get("/work/:id",work);
