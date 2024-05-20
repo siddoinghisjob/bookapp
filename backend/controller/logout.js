@@ -2,13 +2,12 @@ const model = require("../model/logout");
 
 const logout = async (req, res) => {
   try {
-    console.log(req.jwtid)
     const success = await model(req.jwtid);
     if (!success) {
       throw new Error();
     }
     res.clearCookie("token");
-    res.json({ success: true, test : req.jwtid , message: "Successfully logged out" }).status(200);
+    res.json({ success: true , message: "Successfully logged out" }).status(200);
   } catch (e) {
     res.json({ message: "Server Error" }).status(500);
   }
