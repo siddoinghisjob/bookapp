@@ -2,6 +2,7 @@ const model = require("../model/logout");
 
 const logout = async (req, res) => {
   try {
+    console.log(req.jwtid)
     const success = await model(req.jwtid);
     if (!success) {
       throw new Error();
