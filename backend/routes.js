@@ -10,6 +10,10 @@ const work = require('./controller/work');
 const search = require("./controller/search");
 const { add } = require("./controller/review");
 
+router.get('/healthz', (req, res) => {
+    res.json({"success" : true}).status(200)
+})
+
 router.post('/login',login);
 router.post('/register', register);
 
